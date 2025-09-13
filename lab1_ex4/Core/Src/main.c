@@ -188,9 +188,6 @@ int main(void)
           HAL_GPIO_WritePin(LED_g_GPIO_Port, LED_g_Pin, GPIO_PIN_RESET);
           break;
 	  }
-
-
-
   }
   /* USER CODE END 2 */
 int counter =0;
