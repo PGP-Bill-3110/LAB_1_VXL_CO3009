@@ -91,10 +91,16 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  unsigned int counter=15;
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  while (counter >0){
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4 << counter,SET);
+		  counter ++;
+		  HAL_Delay(1000);
+	  }
+	  if (counter >=15) counter =4;
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -151,14 +157,14 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LED_12_Pin|LED_1_Pin|LED_2_Pin|LED_3_Pin
+  HAL_GPIO_WritePin(GPIOA, LED_0_Pin|LED_1_Pin|LED_2_Pin|LED_3_Pin
                           |LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin
                           |LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LED_12_Pin LED_1_Pin LED_2_Pin LED_3_Pin
+  /*Configure GPIO pins : LED_0_Pin LED_1_Pin LED_2_Pin LED_3_Pin
                            LED_4_Pin LED_5_Pin LED_6_Pin LED_7_Pin
                            LED_8_Pin LED_9_Pin LED_10_Pin LED_11_Pin */
-  GPIO_InitStruct.Pin = LED_12_Pin|LED_1_Pin|LED_2_Pin|LED_3_Pin
+  GPIO_InitStruct.Pin = LED_0_Pin|LED_1_Pin|LED_2_Pin|LED_3_Pin
                           |LED_4_Pin|LED_5_Pin|LED_6_Pin|LED_7_Pin
                           |LED_8_Pin|LED_9_Pin|LED_10_Pin|LED_11_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
