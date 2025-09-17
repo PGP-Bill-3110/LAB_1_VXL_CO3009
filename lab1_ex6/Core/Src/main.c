@@ -91,16 +91,18 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  unsigned int counter=15;
+  unsigned int counter=4;
   while (1)
   {
     /* USER CODE END WHILE */
-	  while (counter >0){
-		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4 << counter,SET);
-		  counter ++;
-		  HAL_Delay(1000);
-	  }
-	  if (counter >=15) counter =4;
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0 << counter, SET);
+	  HAL_Delay(500);
+
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0 << counter, RESET);
+
+	     // Tăng counter
+	  counter++;
+	  if (counter > 15) counter = 4;
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
