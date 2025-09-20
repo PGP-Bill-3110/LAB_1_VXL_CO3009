@@ -66,8 +66,8 @@ all: main-build
 main-build: LED_test_1.elf secondary-outputs
 
 # Tool invocations
-LED_test_1.elf LED_test_1.map: $(OBJS) $(USER_OBJS) D:\LAB_VDK\LED_blink\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "LED_test_1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\LAB_VDK\LED_blink\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LED_test_1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+LED_test_1.elf LED_test_1.map: $(OBJS) $(USER_OBJS) D:\LAB_VDK\LAB_1\LED_blink\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "LED_test_1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\LAB_VDK\LAB_1\LED_blink\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LED_test_1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
