@@ -96,11 +96,12 @@ int main(void)
     /* USER CODE END WHILE */
 	  // green negative => set= off; reset=on; nega_LED -PA7; posi_VCC
 
-     //RED on
-	  HAL_GPIO_WritePin(LED_RED_GPIO_Port,LED_RED_Pin, RESET);
+	  HAL_GPIO_WritePin(LED_RED_GPIO_Port,LED_RED_Pin, SET);
 	  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port,LED_YELLOW_Pin, SET);
-	  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port,LED_GREEN_Pin, SET); // = green off
-	  HAL_Delay(5000);
+	  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port,LED_GREEN_Pin, RESET); // = green ON
+	  HAL_Delay(3000);
+
+
 
 	  //YELLOW ON
 	  HAL_GPIO_WritePin(LED_RED_GPIO_Port,LED_RED_Pin, SET);
@@ -109,10 +110,11 @@ int main(void)
 	  HAL_Delay(2000);
 
 	  //GREEN ON
-	  HAL_GPIO_WritePin(LED_RED_GPIO_Port,LED_RED_Pin, SET);
-	  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port,LED_YELLOW_Pin, SET);
-	  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port,LED_GREEN_Pin, RESET); // = green ON
-	  HAL_Delay(3000);
+	     //RED on
+		  HAL_GPIO_WritePin(LED_RED_GPIO_Port,LED_RED_Pin, RESET);
+		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port,LED_YELLOW_Pin, SET);
+		  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port,LED_GREEN_Pin, SET); // = green off
+		  HAL_Delay(5000);
 
 	  //yellow
 	  HAL_GPIO_WritePin(LED_RED_GPIO_Port,LED_RED_Pin, SET);
