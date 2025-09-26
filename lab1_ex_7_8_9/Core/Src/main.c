@@ -129,6 +129,9 @@ void displayClock(int hour, int minute, int second) {
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+int hour = 2;
+int minute = 15;
+int second = 0;	
   while (1)
   {
     /* USER CODE END WHILE */
@@ -139,18 +142,21 @@ void displayClock(int hour, int minute, int second) {
 		 clearNumberOnClock(i);
 	 }*/
 
-	 displayClock(10, 37, 23);
-	 HAL_Delay(1000);
+	  displayClock(hour, minute, second);
 
-
-	 displayClock(6, 50, 12);
-	 HAL_Delay(1000);
-
-	 displayClock(7, 3, 12);
-	 HAL_Delay(1000);
-
-
-
+	      HAL_Delay(5);
+	      second++;
+	      if (second >= 60) {
+	          second = 0;
+	          minute++;
+	      }
+	      if (minute >= 60) {
+	          minute = 0;
+	          hour++;
+	      }
+	      if (hour >= 12) {
+	          hour = 0;
+	      }
   }
   /* USER CODE END 3 */
 }
