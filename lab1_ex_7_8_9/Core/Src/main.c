@@ -96,23 +96,23 @@ void setNumberOnClock(int num){
 
 	    int pinIndex = num + 4; // LED0 -> PA4, LED11 -> PA15
 
-	   /* for (int i = 4; i <= 15; i++)
+	    for (int i = 4; i <= 15; i++)
 	    {
 	        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0 << i, RESET);
-	    } */
+	    } 
 
 	    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0 << pinIndex, SET);
 }
 
 
-/*void clearNumberOnClock(int num)
+void clearNumberOnClock(int num)
 {
     if (num < 0 || num > 11) return;
 
     int pinIndex = num + 4;
 
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0 << pinIndex, RESET);
-}*/
+}
 
 void displayClock(int hour, int minute, int second) {
     clearAllClock();
@@ -135,31 +135,13 @@ int second = 0;
   while (1)
   {
     /* USER CODE END WHILE */
-	 /*for (int i =0 ; i< 12; i++){
+	 for (int i =0 ; i< 12; i++){
 		 clearAllClock();
 		 setNumberOnClock(i);
 		 HAL_Delay(1000);
 		 clearNumberOnClock(i);
-	 }*/
+	 }
 
-
-	  displayClock(hour, minute, second);
-
-	      HAL_Delay(5);
-	      second++;
-	      if (second >= 60) {
-	          second = 0;
-	          minute++;
-	      }
-	      if (minute >= 60) {
-	          minute = 0;
-	          hour++;
-	      }
-	      if (hour >= 12) {
-	          hour = 0;
-	      }
-
-  }
   /* USER CODE END 3 */
 }
 
